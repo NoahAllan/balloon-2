@@ -4,7 +4,11 @@
 
 import matplotlib.pyplot as plt
 from mpl_toolkits.basemap import Basemap
-from matplotlib import animation
+import csv
+# import datetime
+
+fig, ax = plt.subplots()
+fig.canvas.manager.set_window_title('test')
 
 m = Basemap(projection='mill',
             llcrnrlat=49.339441,
@@ -34,12 +38,21 @@ def plot_point(lat, lon):
     m.plot(xpt, ypt, 'r*', markersize=15)
 
 
-plot_point(51, -1)
-plot_point(52, -1)
-plot_point(51, 0)
-plot_point(50, 0)
+csvfile = open('C:/Users/noaha/PycharmProjects/balloon-2/test-data.csv', 'r', encoding='utf-8-sig')
+csv_reader = csv.reader(csvfile)
+for line in csv_reader:
+    if len(line) > 1:
+        latitude, longitude = line[0], line[1]
+        plot_point(float(longitude), float(latitude))
+
+# plot_point(51, -1)
+# plot_point(52, -1)
+# plot_point(51, 0)
+# plot_point(50, 0)
+# plot_point(50, -1)
 
 m.plot(xs, ys, color='yellow')
+
 
 plt.title('Southern England')
 plt.show()
