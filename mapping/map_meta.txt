@@ -1,0 +1,3 @@
+Red Triangle = Launch Site
+Red Dot = Previous Balloon Location
+Blue Star = Latest Balloon Location

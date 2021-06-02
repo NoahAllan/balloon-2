@@ -7,52 +7,65 @@ from mpl_toolkits.basemap import Basemap
 import csv
 # import datetime
 
-fig, ax = plt.subplots()
-fig.canvas.manager.set_window_title('test')
 
-m = Basemap(projection='mill',
-            llcrnrlat=49.339441,
-            llcrnrlon=-6.336610,
-            urcrnrlat=52.736292,
-            urcrnrlon=2.918485,
-            resolution='i')
+def main():
+    fig, ax = plt.subplots()
+    fig.canvas.manager.set_window_title('test')
 
-m.drawcoastlines()
-m.fillcontinents(color='g')
-m.drawmapboundary(fill_color='lightblue')
+    m = Basemap(projection='mill',
+                llcrnrlat=49.339441,
+                llcrnrlon=-6.336610,
+                urcrnrlat=52.736292,
+                urcrnrlon=2.918485,
+                resolution='i')
 
-xs = []
-ys = []
+    m.drawcoastlines()
+    m.fillcontinents(color='g')
+    m.drawmapboundary(fill_color='lightblue')
 
-SORlat, SORlon = 50.816446, -0.435163
-xpt, ypt = m(SORlon, SORlat)
-xs.append(xpt)
-ys.append(ypt)
-m.plot(xpt, ypt, 'r^', markersize=15)
+    xs = []
+    ys = []
 
-
-def plot_point(lat, lon):
-    xpt, ypt = m(lon, lat)
+    SORlat, SORlon = 50.816446, -0.435163
+    xpt, ypt = m(SORlon, SORlat)
     xs.append(xpt)
     ys.append(ypt)
-    m.plot(xpt, ypt, 'r*', markersize=15)
+    m.plot(xpt, ypt, 'r^', markersize=15)
+
+    def plot_point(lat, lon, symbol, size):
+        xpt, ypt = m(lon, lat)
+        xs.append(xpt)
+        ys.append(ypt)
+        m.plot(xpt, ypt, symbol, markersize=size)
+
+    csvfile = open('C:/Users/noaha/PycharmProjects/balloon-2/test-data.csv', 'r', encoding='utf-8-sig')
+    csv_reader = csv.reader(csvfile)
+
+    line_count = 0
+    for line in csv_reader:
+        if line_count == 0:
+            line_count += 1
+        else:
+            if len(line) > 1:
+                latitude, longitude = line[0], line[1]
+                plot_point(float(longitude), float(latitude), 'r.', 10)
+    lines = int(csv_reader.line_num)
+
+    line_count_1 = 0
+    y = True
+    while y is True:
+        if line_count_1 == lines:
+            latitude, longitude = line[0], line[1]
+            plot_point(float(longitude), float(latitude), 'b*', 10)
+            y = False
+        else:
+            line_count_1 += 1
+
+    m.plot(xs, ys, color='yellow')
+
+    plt.title('Southern England')
+    plt.show()
 
 
-csvfile = open('C:/Users/noaha/PycharmProjects/balloon-2/test-data.csv', 'r', encoding='utf-8-sig')
-csv_reader = csv.reader(csvfile)
-for line in csv_reader:
-    if len(line) > 1:
-        latitude, longitude = line[0], line[1]
-        plot_point(float(longitude), float(latitude))
-
-# plot_point(51, -1)
-# plot_point(52, -1)
-# plot_point(51, 0)
-# plot_point(50, 0)
-# plot_point(50, -1)
-
-m.plot(xs, ys, color='yellow')
-
-
-plt.title('Southern England')
-plt.show()
+if __name__ == '__main__':
+    main()
