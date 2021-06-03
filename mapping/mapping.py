@@ -47,7 +47,7 @@ def main():
             line_count += 1
         else:
             if len(line) > 1:
-                latitude, longitude = line[0], line[1]
+                latitude, longitude = line[1], line[2]
                 plot_point(float(longitude), float(latitude), 'r.', 10)
     lines = int(csv_reader.line_num)
 
@@ -55,7 +55,7 @@ def main():
     y = True
     while y is True:
         if line_count_1 == lines:
-            latitude, longitude = line[0], line[1]
+            latitude, longitude = line[1], line[2]
             plot_point(float(longitude), float(latitude), 'b*', 10)
             y = False
         else:
