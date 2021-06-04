@@ -30,7 +30,7 @@ from itertools import cycle
 #             bg = row[3]
 #             print(datetime.datetime.fromtimestamp(float(bg)).strftime('%H:%M:%S'))
 
-absolute_path = 'C:/Users/noaha/PycharmProjects/balloon-2/graphs/altitude.txt'
+absolute_path = '/graphs/CSV-Meta.txt'
 p = Path(absolute_path)
 msg = 'msg 0'
 message = cycle([msg, 'msg 1', 'msg 2', 'msg 3'])

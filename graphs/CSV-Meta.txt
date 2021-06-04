@@ -1,0 +1,16 @@
+Index
+Latitude
+Longitude
+Altitude
+Time
+Temperature
+Pressure
+Humidity
+CarbonDioxideLevels
+CarbonMonoxideLevels
+Ozone
+NitrousOxideLevels
+OxygenLevels
+DustLevels
+LightLevels
+UVLightLevels

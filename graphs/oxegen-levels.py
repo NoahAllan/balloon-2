@@ -1,4 +1,3 @@
-# Imports
 import matplotlib.pyplot as plt
 from matplotlib import style
 import csv
@@ -19,14 +18,13 @@ for line in csv_reader:
     if line_count == 0:
         line_count += 1
     else:
-        x, y = line[4], line[3]
+        x, y = line[4], line[13]
         x1 = datetime.datetime.fromtimestamp(float(x)).strftime('%H:%M')
         xs.append(x1)
         ys.append(float(y))
 ax1.plot(xs, ys)
 ax = plt.gca()
 ax.tick_params(axis='x', labelrotation=60)
-plt.savefig('C:/Users/noaha/OneDrive/Desktop/Altitude.png')
+# plt.savefig('C:/Users/noaha/OneDrive/Desktop/Oxygen-Levels.png')
 
 plt.show()
-
