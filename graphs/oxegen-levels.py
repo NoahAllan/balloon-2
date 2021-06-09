@@ -25,6 +25,6 @@ for line in csv_reader:
 ax1.plot(xs, ys)
 ax = plt.gca()
 ax.tick_params(axis='x', labelrotation=60)
-# plt.savefig('C:/Users/noaha/OneDrive/Desktop/Oxygen-Levels.png')
+plt.savefig('C:/Users/noaha/PycharmProjects/balloon-2/OBS_Data/OBS_Figures/Oxygen-Levels.png')
 
 plt.show()

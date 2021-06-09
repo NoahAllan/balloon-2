@@ -62,10 +62,9 @@ def main():
             line_count_1 += 1
 
     m.plot(xs, ys, color='yellow')
-    plt.savefig('C:/Users/noaha/OneDrive/Desktop/Figure_1.png')
+    # plt.savefig('C:/Users/noaha/OneDrive/Desktop/Figure_1.png')
     plt.title('Southern England')
     plt.show()
-
 
 
 if __name__ == '__main__':
