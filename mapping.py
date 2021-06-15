@@ -8,7 +8,7 @@ import csv
 # import datetime
 
 
-def main():
+def find_location():
     fig, ax = plt.subplots()
     fig.canvas.manager.set_window_title('test')
 
@@ -38,7 +38,7 @@ def main():
         ys.append(ypt)
         m.plot(xpt, ypt, symbol, markersize=size)
 
-    csvfile = open('C:/Users/noaha/PycharmProjects/balloon-2/test-data.csv', 'r', encoding='utf-8-sig')
+    csvfile = open('Meta_Data/test-data.csv', 'r', encoding='utf-8-sig')
     csv_reader = csv.reader(csvfile)
 
     line_count = 0
@@ -62,10 +62,8 @@ def main():
             line_count_1 += 1
 
     m.plot(xs, ys, color='yellow')
-    # plt.savefig('C:/Users/noaha/OneDrive/Desktop/Figure_1.png')
-    plt.title('Southern England')
-    plt.show()
+    plt.savefig('C:/Users/noaha/PycharmProjects/balloon-2/OBS_Data/OBS_Figures/Figure_1.png')
 
 
 if __name__ == '__main__':
-    main()
+    find_location()

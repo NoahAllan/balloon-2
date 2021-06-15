@@ -17,7 +17,7 @@ DustLevels = 'NO DATA'
 LightLevels = 'NO DATA'
 UVLightLevels = 'NO DATA'
 
-csvfile = open('C:/Users/noaha/PycharmProjects/balloon-2/test-data.csv', 'r', encoding='utf-8-sig')
+csvfile = open('Meta_Data/test-data.csv', 'r', encoding='utf-8-sig')
 csv_reader = csv.reader(csvfile)
 
 line_count = 0
@@ -57,7 +57,7 @@ while y is True:
 
         y = False
 
-f = open('OBS_Location_Data.txt', 'w')
+f = open('OBS_Data/OBS_Location_Data.txt', 'w')
 f.truncate(0)
 f.write(f'{Latitude}, {Longitude}\n'
         f'{Altitude} ft')

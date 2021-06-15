@@ -1,0 +1,16 @@
+0 = Index
+1 = Latitude
+2 = Longitude
+3 = Altitude
+4 = Time
+5 = Temperature
+6 = Pressure
+7 = Humidity
+8 = CarbonDioxideLevels
+9 = CarbonMonoxideLevels
+10 = Ozone
+11 = NitrousOxideLevels
+12 = OxygenLevels
+13 = DustLevels
+14 = LightLevels
+15 = UVLightLevel
