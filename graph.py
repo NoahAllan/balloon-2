@@ -44,6 +44,8 @@ def graph(xval, yval, xlable, ylable, xunit, yunit, save_location, show_figure=F
     if show_figure:
         plt.show()
 
+    plt.close()
+
 
 if __name__ == '__main__':
     graph(int(4), int(3), 'TIME', 'ALTITUDE', 'GMT +1', 'ft',

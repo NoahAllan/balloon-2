@@ -44,6 +44,8 @@ def altitude_converter(yval, ylable, yunit, save_location, show_figure=False):
     if show_figure:
         plt.show()
 
+    plt.close()
+
 
 if __name__ == '__main__':
     altitude_converter(int(6), 'Oxygen Levels', 'Particles per M^3',
