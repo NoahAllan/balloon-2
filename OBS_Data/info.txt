@@ -1,0 +1,1 @@
+gps_time: 2021-06-23 14:45:41, gps_lat: 50.81643, gps_lon: -0.43427, gps_alt: -5, gps_heading: 0, gps_speed: 0, temperature_internal: 22.1

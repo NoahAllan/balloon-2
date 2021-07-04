@@ -48,5 +48,5 @@ def altitude_converter(yval, ylable, yunit, save_location, show_figure=False):
 
 
 if __name__ == '__main__':
-    altitude_converter(int(6), 'Oxygen Levels', 'Particles per M^3',
+    altitude_converter(int(5), 'Temp', 'Particles per M^3',
                        'C:/Users/noaha/PycharmProjects/balloon-2/OBS_Data/OBS_Figures/Oxygen_Graph', True)
