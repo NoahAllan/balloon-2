@@ -7,15 +7,19 @@ import requests
 def main():
     # Fetches the JSON file from Hab Hub
     url = "https://legacy-snus.habhub.org/tracker/datanew.php?mode=1day&type=positions&format=json&max_positions=0&" \
-          "position_id=86480312&vehicles=PC4L-R"
+          "position_id=86480312&vehicles=PC4L-12"
     response = urllib.request.urlopen(url)
     data = json.loads(response.read())
     print(data)
 
     data2 = data['positions']
     data3 = data2['position']
-    data4 = data3[0]
-    data5 = data4['data']
+    try:
+        data4 = data3[0]
+        data5 = data4['data']
+    except:
+        pass
+
     # print(data4)
     try:
         vehicle = data4["vehicle"]
@@ -57,7 +61,7 @@ def main():
         gps_time = data4['gps_time']
     except:
         gps_time = 'ERROR'
-    f = open('OBS_Data/OBS_Location_Data.txt', 'w')
+    f = open('C:\\Users\\noaha\\My Drive\\Balloon\\Untitled.txt', 'w')
     f.truncate(0)
     f.write(f'{vehicle}\n'
             f'{gps_time[11:]}\n'
