@@ -62,7 +62,7 @@ def find_location():
             line_count_1 += 1
 
     m.plot(xs, ys, color='yellow')
-    plt.savefig('C:/Users/noaha/PycharmProjects/balloon-2/OBS_Data/OBS_Figures/Figure_1.png')
+    plt.savefig('     balloon-2/OBS_Data/OBS_Figures/Figure_1.png')    #full adress
 
     plt.close()
 
