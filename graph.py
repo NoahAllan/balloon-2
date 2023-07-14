@@ -49,4 +49,4 @@ def graph(xval, yval, xlable, ylable, xunit, yunit, save_location, show_figure=F
 
 if __name__ == '__main__':
     graph(int(4), int(3), 'TIME', 'ALTITUDE', 'GMT +1', 'ft',
-          'C:/Users/noaha/PycharmProjects/balloon-2/OBS_Data/OBS_Figures/Altitude.png', True)
+          '  /balloon-2/OBS_Data/OBS_Figures/Altitude.png', True)  #the full adreess required
