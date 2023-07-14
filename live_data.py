@@ -61,7 +61,7 @@ def main():
         gps_time = data4['gps_time']
     except:
         gps_time = 'ERROR'
-    f = open('C:\\Users\\noaha\\My Drive\\Balloon\\Untitled.txt', 'w')
+    f = open('        ', 'w')        ## I used a google drive document here to transfer data easily from one computer to another to display
     f.truncate(0)
     f.write(f'{vehicle}\n'
             f'{gps_time[11:]}\n'
